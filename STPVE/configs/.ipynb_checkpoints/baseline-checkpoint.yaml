@@ -1,0 +1,38 @@
+data:
+  channels: 3
+  data_width: 9
+  graph_time_window_size: 5
+  history_length: 5
+  max_comment_len: 200
+  prediction_length: 5
+  target_column: ConvOrder_s
+model:
+  baseline_input_dim: 256
+  baseline_hidden_size: 256
+  baseline_num_layers: 4
+  bert_model_name: hfl/chinese-bert-wwm-ext
+
+paths:
+  baseline_epoch_output_path: result/baseline_epoch_result.xlsx
+  baseline_best_epoch_output_path: result/baseline_best_epoch_result.xlsx
+  demo_output_path: result/demo_result.xlsx
+  behavior_data_path: data/behavior_data.csv
+  comment_data_path: data/comment_data.csv
+  graph_dict_path: data/graph_dict.pkl
+  processed_data_path: data/new_data_with_topic.csv
+  product_attribute_path: data/all_product.csv
+  product_data_path: data/product_data.csv
+  vocab_path: data/vocab.pkl
+training:
+  batch_size: 256
+  learning_rate: 0.0001
+  loss_weights:
+    sequence: 1.0
+    class: 10.0
+  n_splits: 10
+  num_epochs: 50
+  random_state: 42
+  demo_mode: 0
+  lgb_n_estimators: 50
+  lgb_learning_rate: 0.01
+  lgb_num_leaves: 31

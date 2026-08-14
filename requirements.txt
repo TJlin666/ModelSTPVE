@@ -1,0 +1,15 @@
+# Core scientific stack
+numpy>=1.23
+pandas>=1.5
+scipy>=1.10
+scikit-learn>=1.6
+tqdm>=4.65
+PyYAML>=6.0
+openpyxl>=3.1
+pytz>=2023.3
+torch>=2.0
+torch-geometric>=2.3
+jieba>=0.42
+transformers>=4.30
+lightgbm>=4.0
+pympler>=1.0

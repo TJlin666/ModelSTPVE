@@ -1,0 +1,49 @@
+data:
+  channels: 3
+  data_width: 9
+  graph_time_window_size: 5
+  history_length: 5
+  lda_max_features: 2000
+  lda_num_topics: 20
+  lda_top_topics: 5
+  max_comment_len: 200
+  prediction_length: 5
+  target_column: ConvOrder_s
+model:
+  behavior_kernel_size: 5
+  content_kernel_num: 100
+  content_kernel_sizes:
+    - 3
+    - 4
+    - 5
+  hidden_size_lstm: 128
+  module_out_dim: 256
+  num_heads_graph: 4
+  num_heads_lstm: 4
+  num_layers_lstm: 1
+  topic_embed_dim: 32
+  topic_kernel_size: 3
+  vocab_embed_dim: 256
+paths:
+  behavior_data_path: data/behavior_data.csv
+  comment_data_path: data/comment_data.csv
+  stpve_epoch_output_path: result/stpve_epoch_result.xlsx
+  stpve_best_epoch_output_path: result/stpve_best_epoch_result.xlsx
+  demo_output_path: result/demo_result.xlsx
+  graph_dict_path: data/graph_dict.pkl
+  lda_model_path: data/lda_model.pkl
+  lda_vectorizer_path: data/lda_vectorizer.pkl
+  processed_data_path: data/new_data_with_topic.csv
+  product_attribute_path: data/all_product.csv
+  product_data_path: data/product_data.csv
+  vocab_path: data/vocab.pkl
+training:
+  batch_size: 256
+  learning_rate: 0.0001
+  loss_weights:
+    sequence: 1.0
+    class: 10.0
+  n_splits: 10
+  num_epochs: 100
+  random_state: 42
+  demo_mode: 0
